@@ -1,0 +1,158 @@
+﻿Analyzing lib...                                                
+
+   info - The imported package 'provider' isn't a dependency of the importing package - app.dart:2:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:provider/provider.dart' - app.dart:2:8 - uri_does_not_exist
+warning - The value of the local variable 'firestoreService' isn't used - app.dart:39:11 - unused_local_variable
+  error - The method 'MultiProvider' isn't defined for the type 'TerritoryRunApp' - app.dart:42:12 - undefined_method
+  error - The method 'ChangeNotifierProvider' isn't defined for the type 'TerritoryRunApp' - app.dart:45:9 - undefined_method
+  error - The method 'ChangeNotifierProvider' isn't defined for the type 'TerritoryRunApp' - app.dart:53:9 - undefined_method
+  error - The method 'ChangeNotifierProvider' isn't defined for the type 'TerritoryRunApp' - app.dart:61:9 - undefined_method
+  error - The method 'ChangeNotifierProvider' isn't defined for the type 'TerritoryRunApp' - app.dart:69:9 - undefined_method
+  error - The method 'ChangeNotifierProvider' isn't defined for the type 'TerritoryRunApp' - app.dart:72:9 - undefined_method
+  error - The method 'ChangeNotifierProvider' isn't defined for the type 'TerritoryRunApp' - app.dart:77:9 - undefined_method
+  error - The method 'Consumer' isn't defined for the type 'TerritoryRunApp' - app.dart:88:15 - undefined_method
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - core\theme\app_theme.dart:96:42 - deprecated_member_use
+warning - Unused import: '../models/user_model.dart' - providers\leaderboard_provider.dart:3:8 - unused_import
+   info - The imported package 'uuid' isn't a dependency of the importing package - providers\run_provider.dart:3:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:uuid/uuid.dart' - providers\run_provider.dart:3:8 - uri_does_not_exist
+  error - Const variables must be initialized with a constant value - providers\run_provider.dart:18:24 - const_initialized_with_non_constant_value
+  error - The method 'Uuid' isn't defined for the type 'RunProvider' - providers\run_provider.dart:18:24 - undefined_method
+   info - The imported package 'provider' isn't a dependency of the importing package - screens\auth\login_screen.dart:2:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:provider/provider.dart' - screens\auth\login_screen.dart:2:8 - uri_does_not_exist
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\auth\login_screen.dart:52:41 - deprecated_member_use
+  error - The method 'Consumer' isn't defined for the type '_LoginScreenState' - screens\auth\login_screen.dart:114:17 - undefined_method
+   info - Unnecessary use of multiple underscores - screens\auth\login_screen.dart:115:38 - unnecessary_underscores
+  error - The method 'Consumer' isn't defined for the type '_LoginScreenState' - screens\auth\login_screen.dart:150:17 - undefined_method
+   info - Unnecessary use of multiple underscores - screens\auth\login_screen.dart:151:38 - unnecessary_underscores
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\auth\login_screen.dart:218:31 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\auth\login_screen.dart:235:29 - deprecated_member_use
+  error - The method 'read' isn't defined for the type 'BuildContext' - screens\auth\login_screen.dart:255:26 - undefined_method
+   info - The imported package 'provider' isn't a dependency of the importing package - screens\auth\signup_screen.dart:2:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:provider/provider.dart' - screens\auth\signup_screen.dart:2:8 - uri_does_not_exist
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\auth\signup_screen.dart:92:45 - deprecated_member_use
+  error - The method 'Consumer' isn't defined for the type '_SignupScreenState' - screens\auth\signup_screen.dart:107:17 - undefined_method
+   info - Unnecessary use of multiple underscores - screens\auth\signup_screen.dart:108:38 - unnecessary_underscores
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\auth\signup_screen.dart:188:33 - deprecated_member_use
+  error - The method 'read' isn't defined for the type 'BuildContext' - screens\auth\signup_screen.dart:203:26 - undefined_method
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - screens\auth\signup_screen.dart:210:21 - use_build_context_synchronously
+   info - The imported package 'provider' isn't a dependency of the importing package - screens\leaderboard\leaderboard_screen.dart:2:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:provider/provider.dart' - screens\leaderboard\leaderboard_screen.dart:2:8 - uri_does_not_exist
+  error - The method 'read' isn't defined for the type 'BuildContext' - screens\leaderboard\leaderboard_screen.dart:26:17 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - screens\leaderboard\leaderboard_screen.dart:32:15 - undefined_method
+  error - The method 'Consumer' isn't defined for the type '_LeaderboardScreenState' - screens\leaderboard\leaderboard_screen.dart:58:13 - undefined_method
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\leaderboard\leaderboard_screen.dart:91:42 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\leaderboard\leaderboard_screen.dart:98:44 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\leaderboard\leaderboard_screen.dart:105:39 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\leaderboard\leaderboard_screen.dart:127:45 - deprecated_member_use
+   info - The imported package 'provider' isn't a dependency of the importing package - screens\map\map_screen.dart:2:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:provider/provider.dart' - screens\map\map_screen.dart:2:8 - uri_does_not_exist
+warning - Unused import: '../territory/territory_screen.dart' - screens\map\map_screen.dart:12:8 - unused_import
+  error - The method 'read' isn't defined for the type 'BuildContext' - screens\map\map_screen.dart:42:15 - undefined_method
+  error - The method 'watch' isn't defined for the type 'BuildContext' - screens\map\map_screen.dart:54:33 - undefined_method
+  error - The method 'watch' isn't defined for the type 'BuildContext' - screens\map\map_screen.dart:55:33 - undefined_method
+  error - The method 'watch' isn't defined for the type 'BuildContext' - screens\map\map_screen.dart:56:34 - undefined_method
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\map\map_screen.dart:107:36 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\map\map_screen.dart:111:40 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\map\map_screen.dart:143:35 - deprecated_member_use
+  error - The method 'watch' isn't defined for the type 'BuildContext' - screens\map\map_screen.dart:218:26 - undefined_method
+  error - The method 'watch' isn't defined for the type 'BuildContext' - screens\map\map_screen.dart:219:25 - undefined_method
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\map\map_screen.dart:233:35 - deprecated_member_use
+  error - The method 'read' isn't defined for the type 'BuildContext' - screens\map\map_screen.dart:264:31 - undefined_method
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\map\map_screen.dart:272:53 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\map\map_screen.dart:314:35 - deprecated_member_use
+   info - The imported package 'provider' isn't a dependency of the importing package - screens\profile\profile_screen.dart:2:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:provider/provider.dart' - screens\profile\profile_screen.dart:2:8 - uri_does_not_exist
+  error - The method 'Consumer2' isn't defined for the type 'ProfileScreen' - screens\profile\profile_screen.dart:17:13 - undefined_method
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\profile\profile_screen.dart:104:35 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\profile\profile_screen.dart:168:49 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\profile\profile_screen.dart:233:33 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\profile\profile_screen.dart:249:32 - deprecated_member_use
+   info - Unnecessary use of multiple underscores - screens\profile\profile_screen.dart:279:35 - unnecessary_underscores
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\profile\profile_screen.dart:334:33 - deprecated_member_use
+   info - The imported package 'provider' isn't a dependency of the importing package - screens\running\running_screen.dart:2:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:provider/provider.dart' - screens\running\running_screen.dart:2:8 - uri_does_not_exist
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\running\running_screen.dart:25:37 - deprecated_member_use
+  error - The method 'Consumer' isn't defined for the type 'RunningScreen' - screens\running\running_screen.dart:49:19 - undefined_method
+   info - Unnecessary use of multiple underscores - screens\running\running_screen.dart:50:39 - unnecessary_underscores
+  error - The method 'Consumer' isn't defined for the type 'RunningScreen' - screens\running\running_screen.dart:67:19 - undefined_method
+   info - Unnecessary use of multiple underscores - screens\running\running_screen.dart:68:39 - unnecessary_underscores
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\running\running_screen.dart:216:22 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\running\running_screen.dart:218:41 - deprecated_member_use
+  error - The method 'Consumer' isn't defined for the type 'RunningScreen' - screens\running\running_screen.dart:273:18 - undefined_method
+   info - Unnecessary use of multiple underscores - screens\running\running_screen.dart:274:29 - unnecessary_underscores
+  error - The method 'read' isn't defined for the type 'BuildContext' - screens\running\running_screen.dart:284:23 - undefined_method
+  error - The method 'read' isn't defined for the type 'BuildContext' - screens\running\running_screen.dart:291:29 - undefined_method
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - screens\territory\territory_screen.dart:82:51 - deprecated_member_use
+   info - The imported package 'connectivity_plus' isn't a dependency of the importing package - services\connectivity_service.dart:3:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:connectivity_plus/connectivity_plus.dart' - services\connectivity_service.dart:3:8 - uri_does_not_exist
+  error - Undefined class 'Connectivity' - services\connectivity_service.dart:11:9 - undefined_class
+  error - The method 'Connectivity' isn't defined for the type 'ConnectivityService' - services\connectivity_service.dart:11:38 - undefined_method
+  error - The name 'ConnectivityResult' isn't a type, so it can't be used as a type argument - services\connectivity_service.dart:38:28 - non_type_as_type_argument
+  error - Undefined name 'ConnectivityResult' - services\connectivity_service.dart:40:14 - undefined_identifier
+  error - Undefined name 'ConnectivityResult' - services\connectivity_service.dart:41:14 - undefined_identifier
+  error - Undefined name 'ConnectivityResult' - services\connectivity_service.dart:42:14 - undefined_identifier
+warning - Unused import: 'dart:math' - services\gps_service.dart:2:8 - unused_import
+   info - Statements in an if should be enclosed in a block - services\heatmap_service.dart:30:47 - curly_braces_in_flow_control_structures
+warning - The declaration '_handleForeground' isn't referenced - services\notification_service.dart:43:8 - unused_element
+   info - The imported package 'hive_flutter' isn't a dependency of the importing package - services\offline_storage_service.dart:2:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:hive_flutter/hive_flutter.dart' - services\offline_storage_service.dart:2:8 - uri_does_not_exist
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:26:11 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:39:7 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:40:7 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:41:7 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:42:7 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:43:7 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:44:7 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:54:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:59:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:71:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:83:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:88:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:94:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:102:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:109:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:114:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:124:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:129:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:138:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:151:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:167:32 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:170:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:175:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:182:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:187:17 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:195:7 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:196:7 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:197:7 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:198:7 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:199:7 - undefined_identifier
+  error - Undefined name 'Hive' - services\offline_storage_service.dart:200:7 - undefined_identifier
+   info - The imported package 'uuid' isn't a dependency of the importing package - services\territory_engine.dart:1:8 - depend_on_referenced_packages
+  error - Target of URI doesn't exist: 'package:uuid/uuid.dart' - services\territory_engine.dart:1:8 - uri_does_not_exist
+  error - Const variables must be initialized with a constant value - services\territory_engine.dart:13:24 - const_initialized_with_non_constant_value
+  error - The method 'Uuid' isn't defined for the type 'TerritoryEngine' - services\territory_engine.dart:13:24 - undefined_method
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - widgets\streak_badge.dart:16:38 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - widgets\streak_badge.dart:19:40 - deprecated_member_use
+
+flutter : 133 issues 
+found. (ran in 50.7s)
+At line:1 char:44
++ ...  
+"D:\flutter\bin;" + 
+$env:Path; flutter 
+analyze --no-pub 2>&1 
+| Out-F ...
++                     
+                ~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (133 issues   
+  found. (ran in 5    
+0.7s):String) [],     
+RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 

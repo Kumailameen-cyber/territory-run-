@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "73156686796",
+    "project_id": "terr-app-e7dfb",
+    "storage_bucket": "terr-app-e7dfb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73156686796:android:6ee980d7ac80dc3367a369",
+        "android_client_info": {
+          "package_name": "com.territoryrun.territory_run"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAduKb2oaDz-Lt2nRbWYKIgliOBwDEb9lk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

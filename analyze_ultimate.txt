@@ -1,0 +1,59 @@
+﻿Analyzing territory_run...                                      
+
+warning - Unused import: 'services/firestore_service.dart' - lib\app.dart:12:8 - unused_import
+   info - Use 'const' for final variables initialized to a constant value - lib\core\utils\geo_utils.dart:41:5 - prefer_const_declarations
+warning - Unused import: 'package:firebase_core/firebase_core.dart' - lib\main.dart:8:8 - unused_import
+  error - 2 positional arguments expected by 'signIn', but 0 found - lib\providers\auth_provider.dart:53:45 - not_enough_positional_arguments
+  error - The named parameter 'email' isn't defined - lib\providers\auth_provider.dart:53:45 - undefined_named_parameter
+  error - The named parameter 'password' isn't defined - lib\providers\auth_provider.dart:53:59 - undefined_named_parameter
+  error - 2 positional arguments expected by 'signUp', but 0 found - lib\providers\auth_provider.dart:85:9 - not_enough_positional_arguments
+  error - The named parameter 'email' isn't defined - lib\providers\auth_provider.dart:85:9 - undefined_named_parameter
+  error - The named parameter 'password' isn't defined - lib\providers\auth_provider.dart:86:9 - undefined_named_parameter
+  error - The named parameter 'username' isn't defined - lib\providers\auth_provider.dart:87:9 - undefined_named_parameter
+   info - Use 'const' with the constructor to improve performance - lib\providers\leaderboard_provider.dart:46:7 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\providers\leaderboard_provider.dart:56:7 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\providers\leaderboard_provider.dart:66:7 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\providers\leaderboard_provider.dart:76:7 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\providers\leaderboard_provider.dart:86:7 - prefer_const_constructors
+   info - Use 'const' for final variables initialized to a constant value - lib\providers\run_provider.dart:99:7 - prefer_const_declarations
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\screens\auth\signup_screen.dart:210:21 - use_build_context_synchronously
+   info - Use 'const' for final variables initialized to a constant value - lib\screens\leaderboard\leaderboard_screen.dart:25:9 - prefer_const_declarations
+   info - Use 'const' with the constructor to improve performance - lib\screens\leaderboard\leaderboard_screen.dart:191:15 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\screens\map\map_screen.dart:276:25 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\screens\profile\profile_screen.dart:184:9 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\screens\profile\profile_screen.dart:272:9 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\screens\running\running_screen.dart:200:18 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\screens\running\running_screen.dart:256:18 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\screens\territory\territory_screen.dart:65:21 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\screens\territory\territory_screen.dart:103:19 - prefer_const_constructors
+warning - Unused import: 'package:flutter/foundation.dart' - lib\services\firestore_service.dart:2:8 - unused_import
+   info - Statements in an if should be enclosed in a block - lib\services\heatmap_service.dart:30:47 - curly_braces_in_flow_control_structures
+   info - Use 'const' for final variables initialized to a constant value - lib\services\privacy_service.dart:33:5 - prefer_const_declarations
+  error - The method 'createDocument' isn't defined for the type 'FirestoreService' - lib\services\sync_service.dart:81:26 - undefined_method
+  error - The method 'updateDocument' isn't defined for the type 'FirestoreService' - lib\services\sync_service.dart:88:26 - undefined_method
+  error - The method 'deleteDocument' isn't defined for the type 'FirestoreService' - lib\services\sync_service.dart:95:26 - undefined_method
+  error - The name 'MyApp' isn't a class - test\widget_test.dart:16:35 - creation_with_non_type
+
+flutter : 33 issues 
+found. (ran in 16.8s)
+At line:1 char:77
++ ... nv:Path = 
+"D:\flutter\bin;" + 
+$env:Path; flutter 
+analyze 2>&1 | Out-F 
+...
++                     
+                      
+   
+~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo    
+      : NotS    
+pecified: (33 issues 
+found. (r    an in 
+16.8s):String) [], 
+Remot    eException
+    + 
+FullyQualifiedErrorId 
+: Nati    
+veCommandError
+ 
