@@ -102,6 +102,33 @@ class AppTextStyles {
     color: AppColors.textSecondary,
   );
 
+  // ── HUD Stats (top bar) ────────────────────────────────
+  static TextStyle hudStatValue = GoogleFonts.inter(
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
+    color: AppColors.textPrimary,
+  );
+
+  static TextStyle hudStatLabel = GoogleFonts.inter(
+    fontSize: 10,
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.5,
+    color: AppColors.textSecondary,
+  );
+
+  // ── Territory Popup ────────────────────────────────────
+  static TextStyle territoryPopupTitle = GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    color: AppColors.textPrimary,
+  );
+
+  static TextStyle territoryPopupSubtitle = GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textSecondary,
+  );
+
   // ── Run HUD (large, readable stats) ────────────────────
   static TextStyle runTimer = GoogleFonts.inter(
     fontSize: 52,

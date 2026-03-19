@@ -3,7 +3,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../models/territory_model.dart';
 
-/// Territory detail modal bottom sheet.
+/// Territory detail modal bottom sheet — neon futuristic style.
 class TerritoryScreen extends StatelessWidget {
   final TerritoryModel territory;
 
@@ -21,10 +21,21 @@ class TerritoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final power = (territory.strength * 10).clamp(0, 100).toInt();
+
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: AppColors.surface,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.territoryColor(territory.colorIndex)
+                .withValues(alpha: 0.15),
+            blurRadius: 20,
+            spreadRadius: 2,
+            offset: const Offset(0, -4),
+          ),
+        ],
       ),
       padding: const EdgeInsets.fromLTRB(24, 12, 24, 32),
       child: Column(
@@ -44,82 +55,49 @@ class TerritoryScreen extends StatelessWidget {
           // ── Header ───────────────────────────────────────
           Row(
             children: [
-              Container(
-                width: 48,
-                height: 48,
-                decoration: BoxDecoration(
-                  color: AppColors.accentSurface,
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: const Icon(
-                  Icons.terrain_rounded,
-                  color: AppColors.accent,
-                  size: 24,
-                ),
-              ),
-              const SizedBox(width: 14),
+              const Text('👑 ', style: TextStyle(fontSize: 20)),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Territory',
-                      style: AppTextStyles.headlineSmall,
+                      'Territory Leader: ${territory.ownerUsername}',
+                      style: AppTextStyles.territoryPopupTitle,
                     ),
-                    const SizedBox(height: 2),
-                    Text(
-                      'Owned by ${territory.ownerUsername}',
-                      style: AppTextStyles.bodyMedium,
+                    const SizedBox(height: 4),
+                    Row(
+                      children: [
+                        Text(
+                          'Level ${(territory.strength * 5).round().clamp(1, 10)}',
+                          style: AppTextStyles.territoryPopupSubtitle,
+                        ),
+                        const Text(
+                          ' • ',
+                          style: TextStyle(color: AppColors.textSecondary),
+                        ),
+                        const Text('🔥 ', style: TextStyle(fontSize: 12)),
+                        Text(
+                          'Streak: ${territory.captureCount} days',
+                          style: AppTextStyles.territoryPopupSubtitle,
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
-              if (territory.isNeutral)
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 10, vertical: 4),
+              GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Container(
+                  width: 32,
+                  height: 32,
                   decoration: BoxDecoration(
-                    color: AppColors.neutralTrail.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(12),
+                    color: AppColors.surfaceVariant,
+                    borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Text(
-                    'Neutral',
-                    style: AppTextStyles.labelSmall.copyWith(
-                      color: AppColors.textSecondary,
-                    ),
-                  ),
-                ),
-            ],
-          ),
-          const SizedBox(height: 24),
-
-          // ── Strength bar ─────────────────────────────────
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Strength', style: AppTextStyles.labelMedium),
-                  Text(
-                    '${territory.strength.toStringAsFixed(1)} km',
-                    style: AppTextStyles.labelLarge.copyWith(
-                      color: AppColors.accent,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(4),
-                child: LinearProgressIndicator(
-                  value: (territory.strength / 10).clamp(0, 1),
-                  minHeight: 8,
-                  backgroundColor: AppColors.surfaceVariant,
-                  valueColor: AlwaysStoppedAnimation<Color>(
-                    territory.isNeutral
-                        ? AppColors.neutralTrail
-                        : AppColors.playerTrail,
+                  child: const Icon(
+                    Icons.close,
+                    size: 18,
+                    color: AppColors.textSecondary,
                   ),
                 ),
               ),
@@ -127,7 +105,73 @@ class TerritoryScreen extends StatelessWidget {
           ),
           const SizedBox(height: 20),
 
-          // ── Stats grid ───────────────────────────────────
+          // ── Power Bar ───────────────────────────────────
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Power', style: AppTextStyles.labelMedium),
+              Text(
+                '$power%',
+                style: AppTextStyles.labelLarge.copyWith(
+                  color: _powerColor(power / 100),
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(6),
+            child: Stack(
+              children: [
+                Container(
+                  height: 10,
+                  width: double.infinity,
+                  color: AppColors.surfaceVariant,
+                ),
+                FractionallySizedBox(
+                  widthFactor: power / 100,
+                  child: Container(
+                    height: 10,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6),
+                      gradient: LinearGradient(
+                        colors: [
+                          AppColors.powerBarStart,
+                          power > 50
+                              ? AppColors.powerBarMid
+                              : AppColors.powerBarStart,
+                          power > 80
+                              ? AppColors.powerBarEnd
+                              : AppColors.powerBarMid,
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 8),
+
+          // ── Last Defended ───────────────────────────────
+          Row(
+            children: [
+              const Icon(
+                Icons.access_time,
+                size: 14,
+                color: AppColors.textSecondary,
+              ),
+              const SizedBox(width: 6),
+              Text(
+                'Last Defended: ${_formatDate(territory.lastDecayAt)}',
+                style: AppTextStyles.bodySmall,
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+
+          // ── Stats Row ──────────────────────────────────
           Row(
             children: [
               Expanded(
@@ -155,36 +199,59 @@ class TerritoryScreen extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 24),
 
-          // ── Created timestamp ─────────────────────────────
+          // ── Action Buttons ─────────────────────────────
           Row(
             children: [
-              const Icon(Icons.access_time,
-                  size: 16, color: AppColors.textSecondary),
-              const SizedBox(width: 8),
-              Text(
-                'Created ${_formatDate(territory.createdAt)}',
-                style: AppTextStyles.bodySmall,
+              Expanded(
+                child: OutlinedButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.remove_red_eye_outlined, size: 16),
+                  label: const Text('View Stats'),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: AppColors.textPrimary,
+                    side: const BorderSide(color: AppColors.divider),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        AppColors.challengeGradientStart,
+                        AppColors.challengeGradientEnd,
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      // Start a run targeting this territory.
+                    },
+                    icon: const Text('⚡', style: TextStyle(fontSize: 14)),
+                    label: const Text('Challenge'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
-          const SizedBox(height: 24),
-
-          // ── Capture button ───────────────────────────────
-          if (!territory.isNeutral)
-            SizedBox(
-              width: double.infinity,
-              height: 48,
-              child: OutlinedButton.icon(
-                onPressed: () {
-                  Navigator.pop(context);
-                  // Start a run targeting this territory.
-                },
-                icon: const Icon(Icons.directions_run),
-                label: const Text('Challenge this Territory'),
-              ),
-            ),
         ],
       ),
     );
@@ -199,7 +266,7 @@ class TerritoryScreen extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Icon(icon, size: 20, color: AppColors.accent),
+          Icon(icon, size: 20, color: AppColors.startButtonTeal),
           const SizedBox(height: 8),
           Text(value, style: AppTextStyles.titleSmall),
           const SizedBox(height: 2),
@@ -209,11 +276,17 @@ class TerritoryScreen extends StatelessWidget {
     );
   }
 
+  Color _powerColor(double fraction) {
+    if (fraction > 0.7) return AppColors.powerBarEnd;
+    if (fraction > 0.4) return AppColors.powerBarMid;
+    return AppColors.powerBarStart;
+  }
+
   String _formatDate(DateTime dt) {
     final diff = DateTime.now().difference(dt);
     if (diff.inDays > 30) return '${(diff.inDays / 30).floor()} months ago';
     if (diff.inDays > 0) return '${diff.inDays} days ago';
-    if (diff.inHours > 0) return '${diff.inHours} hours ago';
-    return '${diff.inMinutes} min ago';
+    if (diff.inHours > 0) return '${diff.inHours}h ago';
+    return '${diff.inMinutes}m ago';
   }
 }

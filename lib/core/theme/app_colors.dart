@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Territory Run color system.
-/// 
+///
 /// All colors are centralized here — no ad-hoc hex values elsewhere.
 class AppColors {
   AppColors._();
@@ -11,6 +11,36 @@ class AppColors {
   static const Color playerTrail = Color(0xFF2979FF);
   static const Color playerTrailGlow = Color(0x552979FF);
   static const Color neutralTrail = Color(0xFFBDBDBD);
+
+  // ── Territory Neon Colors ───────────────────────────────
+  static const Color territoryGreen = Color(0xFF00E676);
+  static const Color territoryGreenGlow = Color(0x5500E676);
+  static const Color territoryGreenFill = Color(0x2200E676);
+
+  static const Color territoryCyan = Color(0xFF00E5FF);
+  static const Color territoryCyanGlow = Color(0x5500E5FF);
+  static const Color territoryCyanFill = Color(0x2200E5FF);
+
+  static const Color territoryPink = Color(0xFFFF4081);
+  static const Color territoryPinkGlow = Color(0x55FF4081);
+  static const Color territoryPinkFill = Color(0x22FF4081);
+
+  static const Color territoryOrange = Color(0xFFFF9100);
+  static const Color territoryOrangeGlow = Color(0x55FF9100);
+  static const Color territoryOrangeFill = Color(0x22FF9100);
+
+  // ── Run Trail ───────────────────────────────────────────
+  static const Color activeRunTrail = Color(0xFF00E676);
+  static const Color activeRunTrailGlow = Color(0x5500E676);
+
+  // ── Start Button ────────────────────────────────────────
+  static const Color startButtonTeal = Color(0xFF00BFA5);
+  static const Color startButtonTealDark = Color(0xFF00897B);
+  static const Color startButtonGlow = Color(0x4400BFA5);
+
+  // ── Challenge Button ────────────────────────────────────
+  static const Color challengeGradientStart = Color(0xFFFF8A80);
+  static const Color challengeGradientEnd = Color(0xFFFF5252);
 
   // ── Heatmap gradient ────────────────────────────────────
   static const Color heatLow = Color(0xFF4CAF50);
@@ -31,6 +61,10 @@ class AppColors {
   static const Color surface = Color(0xFFFFFFFF);
   static const Color surfaceVariant = Color(0xFFF1F3F5);
   static const Color divider = Color(0xFFE9ECEF);
+
+  // ── Glass / Frosted surfaces ────────────────────────────
+  static const Color glassSurface = Color(0xE6FFFFFF);
+  static const Color glassOverlay = Color(0x33000000);
 
   // ── Text ────────────────────────────────────────────────
   static const Color textPrimary = Color(0xFF1A1A2E);
@@ -53,6 +87,11 @@ class AppColors {
   static const Color staminaHalf = Color(0xFFF59E0B);
   static const Color staminaLow = Color(0xFFEF4444);
 
+  // ── Power Bar ───────────────────────────────────────────
+  static const Color powerBarStart = Color(0xFF00E676);
+  static const Color powerBarMid = Color(0xFFFFEB3B);
+  static const Color powerBarEnd = Color(0xFFFF5252);
+
   // ── Leaderboard ─────────────────────────────────────────
   static const Color gold = Color(0xFFFFD700);
   static const Color silver = Color(0xFFC0C0C0);
@@ -69,6 +108,28 @@ class AppColors {
       Color(0xFFFFCA28), // amber
       Color(0xFF42A5F5), // light blue
       Color(0xFFEF5350), // red
+    ];
+    return palette[index % palette.length];
+  }
+
+  /// Territory color by index — neon cycle.
+  static Color territoryColor(int index) {
+    const palette = [
+      territoryGreen,
+      territoryCyan,
+      territoryPink,
+      territoryOrange,
+    ];
+    return palette[index % palette.length];
+  }
+
+  /// Territory fill color by index.
+  static Color territoryFill(int index) {
+    const palette = [
+      territoryGreenFill,
+      territoryCyanFill,
+      territoryPinkFill,
+      territoryOrangeFill,
     ];
     return palette[index % palette.length];
   }

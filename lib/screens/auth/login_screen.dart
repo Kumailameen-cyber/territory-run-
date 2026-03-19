@@ -186,21 +186,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     _socialButton(
                       Icons.g_mobiledata_rounded,
-                      'Google',
+                      'Continue with Google',
                       onTap: () => _handleGoogleLogin(context),
-                    ),
-                    const SizedBox(width: 16),
-                    _socialButton(
-                      Icons.apple,
-                      'Apple',
-                      onTap: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Apple sign-in coming soon!'),
-                            backgroundColor: AppColors.accent,
-                          ),
-                        );
-                      },
                     ),
                   ],
                 ),

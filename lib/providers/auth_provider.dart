@@ -66,7 +66,7 @@ class AuthProvider extends ChangeNotifier {
       }
       _error = 'Invalid credentials';
     } catch (e) {
-      _error = e.toString();
+      _error = _parseAuthError(e);
     }
 
     _isLoading = false;
@@ -96,7 +96,7 @@ class AuthProvider extends ChangeNotifier {
       }
       _error = 'Registration failed';
     } catch (e) {
-      _error = e.toString();
+      _error = _parseAuthError(e);
     }
 
     _isLoading = false;
@@ -125,7 +125,7 @@ class AuthProvider extends ChangeNotifier {
         return true;
       }
     } catch (e) {
-      _error = e.toString();
+      _error = _parseAuthError(e);
     }
 
     _isLoading = false;
@@ -138,5 +138,23 @@ class AuthProvider extends ChangeNotifier {
     await _authService.signOut();
     _currentUser = null;
     notifyListeners();
+  }
+
+  String _parseAuthError(dynamic e) {
+    final String errorStr = e.toString().toLowerCase();
+    if (errorStr.contains('user-not-found') || errorStr.contains('wrong-password') || errorStr.contains('invalid-credential')) {
+      return 'Incorrect email or password.';
+    } else if (errorStr.contains('email-already-in-use')) {
+      return 'An account already exists for that email.';
+    } else if (errorStr.contains('invalid-email')) {
+      return 'Please enter a valid email address.';
+    } else if (errorStr.contains('weak-password')) {
+      return 'Your password is too weak.';
+    } else if (errorStr.contains('network-request-failed') || errorStr.contains('offline')) {
+      return 'Network error. Please check your internet connection.';
+    } else if (errorStr.contains('canceled') || errorStr.contains('cancelled') || errorStr.contains('popup-closed-by-user')) {
+      return 'Sign in was cancelled.';
+    }
+    return 'Authentication failed. Please try again.';
   }
 }
